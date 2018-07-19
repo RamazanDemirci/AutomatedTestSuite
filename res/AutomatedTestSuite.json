@@ -1,0 +1,50 @@
+{
+	"msg_motor_drive" : {
+		"_comment"	 : "https://w5.siemens.com/web/cz/cz/corporate/portal/home/produkty_a_sluzby/IBT/mereni_a_regulace/frekvencni_menice/Documents/014_Parameter_Manual_CU230P_V441_en.pdf, p.17, 1.2 List of Parameters",
+		"recv_format": ["T:%*d.%*d.%*d$msg_motor_drive::%1",",%2",",%3",",%4",",%5"],
+		"send_format": ["$msg_motor_drive::%1",",%2",",%3",",%4",",%5\r\n"],
+		"get_format" : "$msg_motor_drive::\r\n",
+		"recv_params": [	
+			{"name" : "DRIVE_OP_DISPLAY",	"id":1,	"type":"int",		"lsb" : 1,		"format":"%d",	"min" : 0,"max" : 200,  	"generate": "range",	
+				"range":[
+					  "everything enabled"
+					, "set \"enable setpoint\" = \"1\""
+					, "RFG frozen, set \"RFG start\" = \"1\""
+					, "set \"enable RFG\" = \"1\""
+					, "MotID, excit. running"
+					, "withdraw braking with OFF1 using \"ON/OFF1\" = \"1\""
+					, "braking with OFF3 can only be interrupted with OFF2"
+					, "brake on fault, remove fault, acknowledge"
+					, "DC braking active"
+				]},
+			{"name" : "ACCESS_LEVEL",		"id":2,	"type":"int",		"lsb" : 1,		"format":"%d",	"min" : 3,"max" : 4,  		"generate": "range",	"range":["Expert", "Service"]},
+			{"name" : "DRV_COMM_PAR_FILT",	"id":3,	"type":"int",		"lsb" : 1,		"format":"%d",	"min" : 0,"max" : 49, 		"generate": "range",	
+				"range":[
+					  "Ready"
+					, "Quick commissioning"
+					, "Power unit commissioning"
+					, "Motor commissioning"
+					, "Technological application/units"
+					, "Data sets"
+					, "Only Siemens internal"
+					, "Parameter reset"
+					, "Only Siemens internal"
+					, "Only Siemens internal"
+				]},
+			{"name" : "BUF_MEM_MODE",		"id":4,	"type":"int",		"lsb" : 1,		"format":"%d",	"min" : 0,"max" : 2,  		"generate": "range",	
+				"range":[
+					  "Save in a non-volatile fashion (RAM)"
+					, "Buffer memory active (non-volatile)"
+					, "Clear buffer memory"
+				]},			
+			{"name" : "MACRO_DRV_UNIT",		"id":5,	"type":"int",		"lsb" : 1,		"format":"%d",	"min" : 0,"max" : 999999,  	"generate": "null",	"range":[]}
+		],
+		"send_params":[
+			{"name" : "DRIVE_OP_DISPLAY",	"id":1,	"type":"int",		"lsb" : 1,		"format":"%d",	"min" : 0,"max" : 6, 		"generate": "range",	"range":[0,10,12,13,14,16,17,18,19]},
+			{"name" : "ACCESS_LEVEL",		"id":2,	"type":"int",		"lsb" : 1,		"format":"%d",	"min" : 3,"max" : 4, 		"generate": "range",	"range":[3,4]},
+			{"name" : "DRV_COMM_PAR_FILT",	"id":3,	"type":"int",		"lsb" : 1,		"format":"%d",	"min" : 0,"max" : 49, 		"generate": "range",	"range":[0,1,2,3,5,15,29,30,39,49]},
+			{"name" : "BUF_MEM_MODE",		"id":4,	"type":"int",		"lsb" : 1,		"format":"%d",	"min" : 0,"max" : 2, 		"generate": "range",	"range":[0,1,2]},
+			{"name" : "MACRO_DRV_UNIT",		"id":5,	"type":"int",		"lsb" : 1,		"format":"%d",	"min" : 0,"max" : 999999, 	"generate": "random",	"range":[]}
+		]
+	}
+}

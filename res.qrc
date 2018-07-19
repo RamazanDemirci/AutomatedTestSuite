@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/add-icon.png</file>
+        <file>res/connect-icon.png</file>
+        <file>res/disconnect-icon.png</file>
+        <file>res/email-receive-icon.png</file>
+        <file>res/email-send-icon.png</file>
+        <file>res/email-send-icon_all.png</file>
+        <file>res/Open-file-icon.png</file>
+        <file>res/Actions-edit-clear-icon.png</file>
+        <file>res/Categories-preferences-system-icon.png</file>
+        <file>res/send_all_pause_32.png</file>
+        <file>res/send_all_play_32.png</file>
+        <file>res/dark.qss</file>
+        <file>res/show_detail.png</file>
+        <file>res/query_start_32.png</file>
+        <file>res/query_clear_32.png</file>
+        <file>res/check_icon_32.png</file>
+        <file>res/uncheck_icon_32.png</file>
+        <file>res/recon_icon.ico</file>
+    </qresource>
+</RCC>
