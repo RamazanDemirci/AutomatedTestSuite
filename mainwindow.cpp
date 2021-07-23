@@ -159,6 +159,9 @@ void MainWindow::send()
 
     QTreeWidgetItem *item = ui->treeWidget->currentItem();
 
+    if(item == nullptr)
+        return;
+
     int state = item->data(SendSetColumn, Qt::UserRole).toInt();
     state  = (state == Idle) ? Set : Get;
     item->setData(SendSetColumn, Qt::UserRole, state);
@@ -524,7 +527,7 @@ void MainWindow::createTestMessage(QJsonObject paramObj, QString &sendMsg)
     for (int var = 0; var < send_paramList.count(); var++)
     {
         QJsonObject sendParamObj = send_paramList.at(var).toObject();
-        QString send_format = send_FormatList.at(var).toString();
+        QString send_format = send_FormatList[var].toString();
         QString format = sendParamObj["format"].toString();
         QString type = sendParamObj["type"].toString();
 

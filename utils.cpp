@@ -76,7 +76,12 @@ QString Utils::getItem(tsParam param)
 bool Utils::validate(tsParam param)
 {
     bool bValid;
-    if(param.type == "int"){
+
+    if(param.generate == "range")
+    {
+        bValid = param.range.contains(param.value.toInt());
+    }
+    else if(param.type == "int"){
         bValid = Utils::isInRange(param.value.toInt(), param.min, param.max);
     }
     else if(param.type == "char"){

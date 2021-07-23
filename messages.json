@@ -1,0 +1,67 @@
+{
+  "CAM_ExColorGain": {
+    "recv_params": [
+      {
+        "name": "ColorGainEncoder_2nd_Byte",
+        "format": "%1",
+        "type": "int",
+        "min": 0,
+        "max": 9,
+        "range": [],
+        "generate": "random",
+        "lsb": ""
+      },
+      {
+        "name": "ColorGainEncoder_1st_Byte",
+        "format": "%1",
+        "type": "int",
+        "min": 0,
+        "max": 9,
+        "range": [1, 2, 3],
+        "generate": "min2max",
+        "lsb": ""
+      }
+    ],
+    "recv_format": ["CAM_ExColorGain:8101041F4900000%1d", "0%1dFF"],
+    "send_params": [
+      {
+        "format": "%1",
+        "type": "int",
+        "min": 0,
+        "max": 9,
+        "range": [],
+        "generate": "random"
+      },
+      {
+        "format": "%1",
+        "type": "int",
+        "min": 0,
+        "max": 9,
+        "range": [1, 2, 3],
+        "generate": "min2max"
+      }
+    ],
+    "send_format": ["CAM_ExColorGain:8101041F4900000%1d", "0%1dFF"],
+    "get_format": "CAM_ExColorHueInq:8109041F4F00FF"
+  },
+  "CAM_Defog": {
+    "recv_params": [
+      {
+        "format": "%d",
+        "type": "int",
+        "range": [1, 2, 3],
+        "generate": "range"
+      }
+    ],
+    "recv_format": ["CAM_Defog:81010437020%dFF"],
+    "send_params": [
+      {
+        "format": "%d",
+        "type": "int",
+        "range": [1, 2, 3],
+        "generate": "range"
+      }
+    ],
+    "send_format": ["CAM_Defog:81010437020%dFF"]
+  }
+}

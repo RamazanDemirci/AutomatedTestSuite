@@ -26,7 +26,7 @@ bool extractData(const char* input, QByteArray format, TYPE& T)
     return (count == 1);
 }
 
-static class Utils
+class Utils
 {
 public:
     static bool     almostEqual(double val1, double val2);
